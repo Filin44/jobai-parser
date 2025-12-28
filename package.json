@@ -1,0 +1,16 @@
+{
+  "name": "jobai-parser",
+  "version": "1.0.0",
+  "description": "Serverless resume parser for DOCX and PDF files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["resume", "parser", "vercel"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mammoth": "^1.6.0",
+    "pdf-parse": "^1.1.1"
+  }
+}
