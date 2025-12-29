@@ -9,20 +9,20 @@ module.exports = async (req, res) => {
     }
 
     // Получение файла из запроса
-    const { file, fileType } = req.body;
+    const { file, file_type } = req.body;
     
-    if (!file || !fileType) {
-      return res.status(400).json({ error: 'File and fileType are required' });
+    if (!file || !file_type) {
+      return res.status(400).json({ error: 'File and file_type are required' });
     }
 
     let text = '';
 
     // Парсинг в зависимости от типа файла
-    if (fileType === 'docx') {
+    if (file_type === 'docx') {
       const buffer = Buffer.from(file, 'base64');
       const result = await mammoth.extractRawText({ buffer });
       text = result.value;
-    } else if (fileType === 'pdf') {
+    } else if (file_type === 'pdf') {
       const buffer = Buffer.from(file, 'base64');
       const data = await pdfParse(buffer);
       text = data.text;
